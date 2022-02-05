@@ -1,0 +1,13 @@
+package com.sbmoviev2;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Sbmoviev2Application {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Sbmoviev2Application.class, args);
+    }
+
+}
