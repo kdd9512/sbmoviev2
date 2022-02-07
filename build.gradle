@@ -24,6 +24,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.projectlombok:lombok'
+    testCompileOnly 'org.projectlombok:lombok' // test 에서 lombok 사용하기 위함.
+    testAnnotationProcessor 'org.projectlombok:lombok' // test 에서 lombok 사용하기 위함.
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
     annotationProcessor 'org.projectlombok:lombok'
