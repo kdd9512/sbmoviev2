@@ -12,7 +12,7 @@ import java.util.Optional;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-@ToString
+@ToString(exclude = "posterList")
 @Table(name = "tbl_movie")
 public class Movie extends BaseEntity{
 
@@ -27,7 +27,11 @@ public class Movie extends BaseEntity{
     @Builder.Default
     // cascade 속성을 지정하여 movie 속성과 이하에서 저장하는 addPoster 의 poster 의 데이터를 함께 삽입한다.
     // orphanRemoval 속성 : 참조가 없는 하위 Entity 객체는 삭제할 것인가? T/F
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "movie", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(
+            fetch = FetchType.LAZY,
+            mappedBy = "movie",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true)
     private List<Poster> posterList = new ArrayList<>();
 
     public void addPoster(Poster poster){
